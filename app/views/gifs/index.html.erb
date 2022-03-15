@@ -1,0 +1,9 @@
+<ul>
+<% @gifs.each do |gif| %>
+  <li>
+    <%= gif.name %>
+    <%= gif.description %>
+    <%= image_tag gif.file %>
+  </li>
+<% end %>
+</ul>
