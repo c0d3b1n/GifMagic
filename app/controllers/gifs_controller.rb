@@ -2,7 +2,7 @@ class GifsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @gifs = current_user.gifs
+    @gifs = current_user.gifs.paginate(page: params[:page], per_page: 5)
   end
 
   def new
