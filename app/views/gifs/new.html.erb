@@ -1,8 +1,15 @@
-<%= form_for Gif.new do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name%>
-  <%= form.label :description %>
-  <%= form.text_field :description %>
-  <%= form.file_field :file %>
-  <%= form.submit %>
-<% end %>
+<div class="formWrapper">
+  <% if flash.any? %>
+    <% flash.each do |type, msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+  <%= form_for Gif.new, local: true, data: { turbo: false } do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+    <%= form.file_field :file %>
+    <%= form.submit %>
+  <% end %>
+</div>

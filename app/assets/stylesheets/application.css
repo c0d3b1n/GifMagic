@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ .formWrapper {
+  display: flex;
+ }
+
+form {
+  display: grid;
+  grid-column: 1;
+  margin: auto;
+}
+
+input {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+table, tr, td {
+  border: 1px solid;
+}
+
+.gifWrapper {
+  width: 200px;
+  height: 200px;
+}

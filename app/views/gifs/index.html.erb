@@ -1,9 +1,17 @@
-<ul>
+<div>
+  <% binding.break %>
+  <% if flash.any? %>
+    <% flash.each do |type, msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+</div>
+<table>
 <% @gifs.each do |gif| %>
-  <li>
-    <%= gif.name %>
-    <%= gif.description %>
-    <%= image_tag gif.file %>
-  </li>
+  <tr>
+    <td><%= gif.name %></td>
+    <td><%= gif.description %></td>
+    <td><%= image_tag gif.file, class: "gifWrapper" %></td>
+  </tr>
 <% end %>
-</ul>
+</table>
